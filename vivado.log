@@ -1,0 +1,522 @@
+#-----------------------------------------------------------
+# Vivado v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Thu Apr 16 16:04:15 2020
+# Process ID: 13492
+# Current directory: D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim
+# Command line: vivado.exe -mode tcl -s c:/Users/sterben/.vscode/extensions/sterben.fpga-support-0.1.10/src/.TOOL/Xilinx/Script/Xilinx_TCL/Vivado/run.tcl -notrace
+# Log file: D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/vivado.log
+# Journal file: D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim\vivado.jou
+#-----------------------------------------------------------
+Sourcing tcl script 'D:/APP/vivado_18_3/Vivado/2018.3/scripts/Vivado_init.tcl'
+source c:/Users/sterben/.vscode/extensions/sterben.fpga-support-0.1.10/src/.TOOL/Xilinx/Script/Xilinx_TCL/Vivado/run.tcl -notrace
+---------what do you want to do next---------
+*** input e to exit ***
+1) Update_file
+2) Simulation
+3) Build
+4) program
+5) Debug
+6) GUI
+update_compile_order -fileset sources_1
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 797.105 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 797.105 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 797.105 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 797.105 ; gain = 0.000
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 1 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 797.105 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:00 ; elapsed = 00:00:08 . Memory (MB): peak = 797.105 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:09 . Memory (MB): peak = 797.105 ; gain = 0.000
+relaunch_sim
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-344] 'suspend_sim' was cancelled
+INFO: [Common 17-17] undo 'relaunch_sim'
+INFO: [Common 17-17] undo 'relaunch_sim'
+INFO: [Common 17-344] 'relaunch_sim' was cancelled
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 797.105 ; gain = 0.000
+run 1 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 799.375 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 799.375 ; gain = 0.000
+run 1 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 799.375 ; gain = 0.000
+run 1 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 799.375 ; gain = 0.000
+run 1 ms
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 799.375 ; gain = 0.000
+relaunch_sim
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'D:/APP/vivado_18_3/Vivado/2018.3/data/xsim/xsim.ini' copied to run dir:'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim'
+Vivado Simulator 2018.3
+Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
+Running: D:/APP/vivado_18_3/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 2101b931dd114ad1a7a24c2c2fcdc53f --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.FIFO_RAM(RAM_DEEP=32,DATA_WIDTH=...
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 799.375 ; gain = 0.000
+run 1 ms
+run 1 ms
