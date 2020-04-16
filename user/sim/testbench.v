@@ -3,45 +3,49 @@ module testbench();
 parameter DATA_WIDTH = 32;
 parameter ADDR_WIDTH = 32;
 parameter MAIN_FRE   = 100; //unit MHz
-reg                   clk       = 0;
+reg                   W_clk       = 0;
+reg                   R_clk       = 0;
 reg                   sys_rst_n = 0;
-reg                   valid_out = 0;
 reg [DATA_WIDTH-1:0]  data = 0;
-reg [ADDR_WIDTH-1:0]  addr = 0;
-
+reg   Request = 0;
 always begin
-    #(500/MAIN_FRE) clk = ~clk;
+    #(500/10) W_clk = ~W_clk;
+end
+always begin
+    #(500/100) R_clk = ~R_clk;
 end
 always begin
     #50 sys_rst_n = 1;
+	#50 Request = 1;
 end
+
 always begin
-    if (valid_out) begin
-        #10 addr = addr + 1;#10;
+    if (Request) begin
+        #(500/5) data = data + 1;#10;
     end
     else begin     
-        #10 addr = 0;#10;
-    end
-end
-always begin
-    if (valid_out) begin
-        #10 data = data + 1;#10;
-    end
-    else begin     
-        #10 data = 0;#10;
+        #(500/5) data = 0;#10;
     end
 end
 
+// FIFO_RAM Outputs
+wire  [DATA_WIDTH-1:0]  rd_data;
+wire  data_vaild;
+wire  data_tlast;
 
+FIFO_RAM #(
+    .RAM_DEEP         ( 32 ),
+    .DATA_WIDTH       ( DATA_WIDTH   ))
+ u_FIFO_RAM (
+    .wr_clk                  ( W_clk       ),
+    .wr_data                 ( data      ),
+    .rd_clk                  ( R_clk       ),
+    .rst_n                   ( sys_rst_n    ),
+    .Request                 ( Request      ),
 
-
-initial begin
-    $finish;
-end
-
-initial begin            
-    $dumpfile("wave.vcd");        //生成的vcd文件名称
-    $dumpvars(0, testbench);    //tb模块名称
-end
+    .rd_data                 ( rd_data      ),
+    .data_vaild              ( data_vaild   ),
+    .data_tlast              ( data_tlast   )
+);
 
 endmodule  //TOP

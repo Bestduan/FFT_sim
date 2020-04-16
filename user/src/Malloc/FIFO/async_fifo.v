@@ -3,8 +3,8 @@
 //-----------------------------------------------
 `timescale  1ns/1ps
 module async_fifo #(
-	parameter W  = 4'd8,
-	parameter D  = 3'd4
+	parameter W  = 8,
+	parameter D  = 4
 ) (
 	//timing for wr
 	input				wr_clk, 
@@ -45,7 +45,7 @@ end // initial begin
 
 // synopsys translate_on
 
-reg [W-1 : 0]    mem[D-1 : 0];
+reg [W-1 : 0] mem[D-1 : 0];
 
 /*********************** write side ************************/
 reg  [AW:0] sync_rd_ptr_0, sync_rd_ptr_1; 
