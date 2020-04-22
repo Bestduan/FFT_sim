@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="5640000001fs"></ZoomEndTime>
+      <Cursor1Time time="3995000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="248"></NameColumnWidth>
+      <ValueColumnWidth column_width="145"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject fp_name="/testbench/u_FIFO_RAM/wr_clk" type="logic">
+      <obj_property name="ElementShortName">wr_clk</obj_property>
+      <obj_property name="ObjectShortName">wr_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/Start_SIG_pose" type="logic">
+      <obj_property name="ElementShortName">Start_SIG_pose</obj_property>
+      <obj_property name="ObjectShortName">Start_SIG_pose</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/wr_cnt_busy" type="logic">
+      <obj_property name="ElementShortName">wr_cnt_busy</obj_property>
+      <obj_property name="ObjectShortName">wr_cnt_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/wr_cnt" type="array">
+      <obj_property name="ElementShortName">wr_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/wr_data" type="array">
+      <obj_property name="ElementShortName">wr_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">wr_data[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/rd_cnt_busy" type="logic">
+      <obj_property name="ElementShortName">rd_cnt_busy</obj_property>
+      <obj_property name="ObjectShortName">rd_cnt_busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/rd_cnt" type="array">
+      <obj_property name="ElementShortName">rd_cnt[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_cnt[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/rd_data" type="array">
+      <obj_property name="ElementShortName">rd_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rd_data[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/data_vaild" type="logic">
+      <obj_property name="ElementShortName">data_vaild</obj_property>
+      <obj_property name="ObjectShortName">data_vaild</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/u_FIFO_RAM/data_tlast" type="logic">
+      <obj_property name="ElementShortName">data_tlast</obj_property>
+      <obj_property name="ObjectShortName">data_tlast</obj_property>
+   </wvobject>
+</wave_config>

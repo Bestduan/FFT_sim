@@ -13,83 +13,25 @@ module FIFO_RAM #(
     output               	data_tlast
 );
 
-reg        wr_clk_buf = 0;
-reg        Request_buf = 0;
-reg        Request_buf1 = 0;
-reg        wr_cnt_busy = 0;
-wire       wr_en;
-wire       wr_done;
-reg        wr_done_buf = 0;
-reg        wr_done_buf1 = 0;
-reg        wr_done_buf2 = 0;
-reg        wr_done_buf3 = 0;
-wire       rd_done;
-reg        rd_cnt_busy = 0;
-wire       rd_en;
-reg [16:0] wr_cnt = 0;
-reg [16:0] rd_cnt = 0;
-wire       wr_clk_pose = ~wr_clk_buf & wr_clk;
-wire       Request_pose = ~Request_buf1 & Request_buf;
+// parameter AW =  (RAM_DEEP < 2)      ? 1  : 
+// 				(RAM_DEEP < 4)      ? 2  :
+// 				(RAM_DEEP < 8)      ? 3  :
+// 				(RAM_DEEP < 16)     ? 4  :
+// 				(RAM_DEEP < 32)     ? 5  :
+// 				(RAM_DEEP < 64)     ? 6  :
+// 				(RAM_DEEP < 128)    ? 8  :
+// 				(RAM_DEEP < 256)    ? 9  :
+// 				(RAM_DEEP < 512)    ? 10 :
+// 				(RAM_DEEP < 1024)   ? 11 :
+// 				(RAM_DEEP < 2046)   ? 12 :
+// 				(RAM_DEEP < 4096)   ? 13 :
+// 				(RAM_DEEP < 8192)   ? 14 :
+// 				(RAM_DEEP < 16384)  ? 15 :
+// 				(RAM_DEEP < 32768)  ? 16 : 
+// 				(RAM_DEEP < 65536)  ? 17 : 
+// 				(RAM_DEEP < 131072) ? 18 : 0;
 
-always@(posedge rd_clk) begin
-    wr_clk_buf <= wr_clk;
-    Request_buf1 <= Request_buf;
-	if(wr_clk_pose)
-        Request_buf <= Request;
-end
-
-/*wr_en && wr_cnt     control*/
-always@(posedge rd_clk) begin
-    if(!rst_n)
-        wr_cnt_busy <= 1'b0;
-    else if(Request_pose)
-        wr_cnt_busy <= 1'b1;
-    else if(wr_cnt == RAM_DEEP+1 && wr_clk_pose)
-        wr_cnt_busy <= 1'b0;
-end
-
-always@(posedge rd_clk) begin
-    if(!rst_n)
-        wr_cnt <= 14'd0;
-    else if(wr_cnt == RAM_DEEP+1 && wr_clk_pose)
-        wr_cnt <= 14'd0;
-    else if(wr_cnt_busy && wr_clk_pose)
-        wr_cnt <= wr_cnt + 14'd1;
-end
-
-assign wr_en = (wr_cnt >=1 && wr_cnt <=RAM_DEEP+1) ? 1'b1 : 1'b0;
-assign wr_done = (wr_cnt == RAM_DEEP+1  && wr_clk_pose) ? 1'b1 : 1'b0;
-/*rd_en && rd_cnt     control*/
-always@(posedge rd_clk) begin
-    wr_done_buf <= wr_done;
-    wr_done_buf1 <= wr_done_buf;
-    wr_done_buf2 <= wr_done_buf1;
-    wr_done_buf3 <= wr_done_buf2;
-end
-
-always@(posedge rd_clk) begin
-    if(!rst_n)
-        rd_cnt_busy <= 1'b0;
-    else if(wr_done_buf3)
-        rd_cnt_busy <= 1'b1;
-    else if(rd_cnt == RAM_DEEP+1)
-        rd_cnt_busy <= 1'b0;
-end
-
-always@(posedge rd_clk) begin
-    if(!rst_n)
-        rd_cnt <= 14'd0;
-    else if(rd_cnt == RAM_DEEP+1)
-        rd_cnt <= 14'd0;
-    else if(rd_cnt_busy)
-        rd_cnt <= rd_cnt + 14'd1;
-end
-
-assign rd_en = (rd_cnt>=1 && rd_cnt<=RAM_DEEP+1) ? 1'b1 : 1'b0;
-assign rd_done = (rd_cnt == RAM_DEEP+1) ? 1'b1 : 1'b0;
-assign data_vaild = (rd_cnt >= 2 && rd_cnt <= RAM_DEEP+1) ? 1'b1 : 1'b0;
-assign data_tlast = rd_done;
-
+reg [DATA_WIDTH-1:0] data_r = 0;
 reg [DATA_WIDTH-1:0] mem[RAM_DEEP-1:0];
 
 integer i;
@@ -99,21 +41,71 @@ initial begin
 	end
 end
 
+reg [31:0] wr_cnt         = 0;
+reg        wr_cnt_busy    = 0;
+reg        Start_SIG      = 0;
+reg        Start_SIG_buf  = 0;
+wire       Start_SIG_pose = ~Start_SIG_buf & Start_SIG;
+always@(posedge wr_clk) begin
+    Start_SIG     <= Request;
+	Start_SIG_buf <= Start_SIG;
+	if(Start_SIG_pose)
+		wr_cnt_busy <= 1'b1;
+	else
+		wr_cnt_busy <= wr_cnt_busy;
+	if(wr_cnt_busy) begin
+		wr_cnt <= wr_cnt + 1'b1;
+		if(wr_cnt == RAM_DEEP-1) begin			
+			wr_cnt      <= 0;
+			wr_cnt_busy <= 1'b0;
+		end		
+		else
+			wr_cnt_busy <= wr_cnt_busy;
+	end
+	else 
+		wr_cnt <= wr_cnt;
+end
+
 always @(posedge wr_clk) begin
-	if(wr_en)
+	if(wr_cnt_busy)
 		mem[wr_cnt] <= wr_data;
 	else begin
 		mem[wr_cnt] <= mem[wr_cnt];
 	end
 end
 
-reg [DATA_WIDTH-1:0] rd_data_r = 0;
-always @(posedge rd_clk) begin
-	if(rd_en)
-		rd_data_r <= mem[rd_cnt];
+reg [31:0] rd_cnt       = 0;
+reg        rd_cnt_busy  = 0;
+reg        wr_done      = 0;
+reg        wr_done_buf  = 0;
+wire       wr_done_nege = wr_done_buf & ~wr_done;
+always@(posedge rd_clk) begin
+	wr_done     <= wr_cnt_busy;
+	wr_done_buf <= wr_done;
+	if(wr_done_nege) 
+		rd_cnt_busy <= 1'b1;
 	else
-		rd_data_r <= rd_data_r;
+		rd_cnt_busy <= rd_cnt_busy;
+	if(rd_cnt_busy) 
+		if(rd_cnt == RAM_DEEP-1) begin
+			rd_cnt      <= 0;
+			rd_cnt_busy <= 1'b0;
+		end
+		else
+			rd_cnt <= rd_cnt + 1'b1;
+	else
+		rd_cnt <= rd_cnt;
 end
-assign rd_data = rd_data_r;
+
+always @(posedge rd_clk) begin
+	if(rd_cnt_busy)
+		data_r <= mem[rd_cnt];
+	else 
+		data_r <= data_r;
+end
+
+assign rd_data    = data_r;
+assign data_vaild = (rd_cnt >= 1 && rd_cnt <= RAM_DEEP-1) ? 1'b1 : 1'b0;
+assign data_tlast = (rd_cnt == RAM_DEEP-1) ? 1'b1 : 1'b0;
 
 endmodule

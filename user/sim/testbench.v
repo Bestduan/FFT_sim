@@ -19,13 +19,8 @@ always begin
 	#50 Request = 1;
 end
 
-always begin
-    if (Request) begin
-        #(500/5) data = data + 1;#10;
-    end
-    else begin     
-        #(500/5) data = 0;#10;
-    end
+always @(posedge W_clk ) begin
+	data <= data + 1;
 end
 
 // FIFO_RAM Outputs
@@ -37,9 +32,9 @@ FIFO_RAM #(
     .RAM_DEEP         ( 32 ),
     .DATA_WIDTH       ( DATA_WIDTH   ))
  u_FIFO_RAM (
-    .wr_clk                  ( W_clk       ),
-    .wr_data                 ( data      ),
-    .rd_clk                  ( R_clk       ),
+    .wr_clk                  ( W_clk        ),
+    .wr_data                 ( data         ),
+    .rd_clk                  ( R_clk        ),
     .rst_n                   ( sys_rst_n    ),
     .Request                 ( Request      ),
 
