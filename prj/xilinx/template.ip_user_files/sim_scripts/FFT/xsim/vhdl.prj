@@ -1,0 +1,4 @@
+vhdl xil_defaultlib  \
+"../../../../../../user/IP/FFT/sim/FFT.vhd" \
+
+nosort
