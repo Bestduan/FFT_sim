@@ -1,0 +1,29 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/TOP.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module TOP
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module FIFO_RAM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/FIFO/sync_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sync_fifo
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/FIFO/async_fifo.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module async_fifo
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/ftwiddle98.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ftwiddle9
+INFO: [VRFC 10-311] analyzing module ftwiddle8
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/ftwiddle11.sv" into library xil_defaultlib
+ERROR: [VRFC 10-2934] 'MULT_OP_DLY' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:7]
+ERROR: [VRFC 10-2934] 'SIM_DLY' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:8]
+ERROR: [VRFC 10-2934] 'REAL_MSB' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:17]
+ERROR: [VRFC 10-2934] 'REAL_LSB' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:18]
+ERROR: [VRFC 10-2934] 'IMGN_MSB' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:19]
+ERROR: [VRFC 10-2934] 'IMGN_LSB' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:20]
+ERROR: [VRFC 10-2934] 'MCPLX_WIDTH' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:23]
+ERROR: [VRFC 10-2934] 'MREAL_WIDTH' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:24]
+ERROR: [VRFC 10-2934] 'MIMGN_WIDTH' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:25]
+ERROR: [VRFC 10-2934] 'REAL_MMSB' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:28]
+ERROR: [VRFC 10-2934] 'REAL_MLSB' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:29]
+ERROR: [VRFC 10-2934] 'IMGN_MMSB' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:30]
+ERROR: [VRFC 10-2934] 'IMGN_MLSB' is already declared [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv:31]
+INFO: [VRFC 10-311] analyzing module ftwiddle11
+ERROR: [VRFC 10-2865] module 'ftwiddle11' ignored due to previous errors [D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/DSP/FFT/Flow_FFT_IFFT/ftwiddle11.sv:4]

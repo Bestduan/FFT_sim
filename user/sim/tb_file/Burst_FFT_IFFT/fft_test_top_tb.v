@@ -3,7 +3,7 @@
 // ALL RIGHTS REVERVED.
 //******************************************************************
 `timescale 1ns/1ns
-module testbench();
+module fft_test_top_tb();
 
 reg         clk;
 reg         rstn;

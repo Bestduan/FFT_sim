@@ -1,0 +1,57 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../../user/TOP.v" \
+"../../../../../../user/src/Malloc/RAM/RAM.v" \
+"../../../../../../user/src/Malloc/RAM/FIFO_RAM.v" \
+"../../../../../../user/src/Malloc/FIFO/sync_fifo.v" \
+"../../../../../../user/src/Malloc/FIFO/async_fifo.v" \
+
+sv xil_defaultlib  \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/ftwiddle98.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/ftwiddle11.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/ftwiddle10.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/ftwiddle.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/ftrans_II.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/ftrans_I.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/ftrans1.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/fft_stageX.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/fft_stage2.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/fft_stage1.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/fft_inc.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/fft.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/cmpl_mul_6clk.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/cmpl_mul_2clk.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/BF_stgX.sv" \
+"../../../../../../user/src/DSP/FFT/Flow_FFT_IFFT/BF_op.sv" \
+
+verilog xil_defaultlib  \
+"../../../../../../user/src/DSP/FFT/FFT_xilinx_IP/FFT_Control.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Memory/dromr_16x512.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Memory/dromi_16x512.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Memory/drm_32x512.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/FFT_top.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/FFT_ram_wr.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/FFT_ram_rd.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/FFT_o_switch.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/FFT_out.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/FFT_i_switch.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/FFT_ctrl.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Butterfly.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Apply/rom_fft_out.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Apply/FFT_start.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Apply/FFT_src_in.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Apply/FFT_rd.v" \
+"../../../../../../user/src/DSP/FFT/Burst_FFT_IFFT/Apply/dram_16x1024.v" \
+"../../../../../../user/src/DSP/Cordic.v" \
+"../../../../../../user/src/DownSample.v" \
+"../../../../../../user/sim/tb_file/Burst_FFT_IFFT/fft_test_top_tb.v" \
+"../../../../../../user/sim/lib/DDS_Gen.v" \
+"../../../../../../user/sim/tb_file/Burst_FFT_IFFT/fft_test_top.v" \
+"../../../../../../user/sim/tb_file/Burst_FFT_IFFT/pgr_rst_debounce_v1.0.v" \
+"../../../../../../user/sim/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

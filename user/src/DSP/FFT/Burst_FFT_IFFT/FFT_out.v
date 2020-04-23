@@ -15,7 +15,7 @@ module fft_out #(
     input  wire [DATA_WIDTH - 1 : 0] ib_rd_data,
 
     output reg  [DATA_WIDTH - 1 : 0] m_axi_data,
-    output wire [ADDR_WIDTH : 0]     m_axi_user,//index
+    output wire [ADDR_WIDTH : 0]     m_axi_addr,//index
     output reg                       m_axi_last,
     output reg                       m_axi_valid,
     input  wire                      m_axi_ready
@@ -121,6 +121,6 @@ always@(posedge clk or negedge rst_n) begin
         m_axi_last <= 1'b0;
 end
 
-assign m_axi_user = out_index;
+assign m_axi_addr = out_index;
 
 endmodule//fft_out

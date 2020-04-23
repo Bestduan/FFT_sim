@@ -13,7 +13,7 @@ localparam  DEPTH = 2**ADDR_WIDTH;
 reg [DATA_WIDTH-1:0] mem [0:DEPTH-1];
 
 initial begin
-    $readmemh("fft_out.dat",mem,0,DEPTH-1);
+    $readmemh("D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/data/fft_out.dat",mem,0,DEPTH-1);
 end
 
 always @(posedge clk) begin

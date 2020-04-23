@@ -7,34 +7,34 @@
 
 module fft_top #(
     parameter   FFT_LENGTH          =   63,   //len = 1023+1
-    parameter   BUTTERFLY_LAT       =   1,      //
-    parameter   FFT_MODE            =   0,      //0:"FFT"; 1:"IFFT"
-    parameter   SIG_MODE            =   1,      //1:signed; 0:unsigned
-    parameter   DATA_WIDTH          =   16,     //8~
-    parameter   TWIDDLE_WIDTH       =   16,     //8~
-    parameter   ADDR_WIDTH          =   9       //FFT_LENGTH = 2(ADDR_WIDTH+1)
+    parameter   BUTTERFLY_LAT       =   1,    //
+    parameter   FFT_MODE            =   0,    //0:"FFT"; 1:"IFFT"
+    parameter   SIG_MODE            =   1,    //1:signed; 0:unsigned
+    parameter   DATA_WIDTH          =   16,   //8~
+    parameter   TWIDDLE_WIDTH       =   16,   //8~
+    parameter   ADDR_WIDTH          =   9     //FFT_LENGTH = 2(ADDR_WIDTH+1)
 ) (
 	input  wire                     clk,//
 	input  wire                     rst_n,
 
 	input  wire                     cfg_valid,
-	input  wire [ 23:0]             cfg_data,
+	input  wire [23:0]              cfg_data,
 	output wire                     cfg_ready,
 
 	input  wire                     s_axi_valid,
 	input  wire                     s_axi_last,
-	input  wire [ 2*DATA_WIDTH-1:0] s_axi_data,
+	input  wire [2*DATA_WIDTH-1:0]  s_axi_data,
 	output wire                     s_axi_ready,
 
-	output wire [ 2*DATA_WIDTH-1:0] m_axi_data,
-	output wire [   ADDR_WIDTH  :0] m_axi_user,//index
+	output wire [2*DATA_WIDTH-1:0]  m_axi_data,
+	output wire [ADDR_WIDTH : 0]    m_axi_addr,//index
 	output wire                     m_axi_last,
 	output wire                     m_axi_valid,
 	input  wire                     m_axi_ready
 );
 
 localparam  LEN_WIDTH    = 16;
-localparam  LEVEL_VALUE  = log2(FFT_LENGTH);
+localparam  LEVEL_VALUE  = $clog2(FFT_LENGTH);
 
 //	port
 wire                        dft_mode;
@@ -142,7 +142,6 @@ fft_ram_wr #(
 	.bo_wr_data     ( bo_wr_data    ),
 	.a_wr_en        ( a_wr_en       ),
 	.a_wr_data      ( a_wr_data     ),
-//    .a_wr_addr      ( a_wr_addr     ),
 	.b_wr_en        ( b_wr_en       ),
 	.b_wr_data      ( b_wr_data     ),
 	.b_wr_addr      ( b_wr_addr     )
@@ -313,21 +312,10 @@ fft_out #(
 	.ia_rd_data   ( ia_rd_data   ),
 	.ib_rd_data   ( ib_rd_data   ),
 	.m_axi_data   ( m_axi_data   ),
-	.m_axi_user   ( m_axi_user   ),
+	.m_axi_addr   ( m_axi_addr   ),
 	.m_axi_last   ( m_axi_last   ),
 	.m_axi_valid  ( m_axi_valid  ),
 	.m_axi_ready  ( m_axi_ready  )
 );
-
-// Log 2
-function integer log2;
-    input integer dep; begin
-        log2 = 0;
-        while (dep >= 1) begin
-            dep  = dep >> 1;
-            log2 = log2 + 1;
-        end
-    end
-endfunction
 
 endmodule//fft_top

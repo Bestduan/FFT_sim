@@ -155,9 +155,6 @@ always@(posedge clk or negedge rst_n) begin
         15'b000_0000_001x_xxxx  :   fft_lev_limit <= 4'h6;
         15'b000_0000_0001_xxxx  :   fft_lev_limit <= 4'h5;
         15'b000_0000_0000_1xxx  :   fft_lev_limit <= 4'h4;
-//        15'b000_0000_0000_01xx  :   fft_lev_limit <= 4'h3;
-//        15'b000_0000_0000_001x  :   fft_lev_limit <= 4'h2;
-//        15'b000_0000_0000_0001  :   fft_lev_limit <= 4'h1;
         default                 :   fft_lev_limit <= 4'h3;
     endcase
 end
