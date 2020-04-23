@@ -53,13 +53,16 @@ fft_top #(
 ) fft_top_u (
 	.clk         ( sys_clk     ),
 	.rst_n       ( sys_rst_n   ),
+
 	.cfg_valid   ( cfg_valid   ),
 	.cfg_data    ( cfg_data    ),
 	.cfg_ready   ( cfg_ready   ),
+
 	.s_axi_valid ( s_axi_valid ),
 	.s_axi_last  ( s_axi_last  ),
 	.s_axi_data  ( s_axi_data  ),
 	.s_axi_ready ( s_axi_ready ),
+	
 	.m_axi_data  ( m_axi_data  ),
 	.m_axi_user  ( m_axi_user  ),
 	.m_axi_last  ( m_axi_last  ),

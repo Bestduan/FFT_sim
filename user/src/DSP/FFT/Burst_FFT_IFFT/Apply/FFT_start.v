@@ -5,7 +5,7 @@
 
 `timescale 1 ns/1 ps
 
-module pgr_fft_start #(
+module fft_start #(
     parameter   DATA_WIDTH          =   16,     //8~
     parameter   ADDR_WIDTH          =   9       //FFT_LENGTH = 2(ADDR_WIDTH+1)
 ) (
