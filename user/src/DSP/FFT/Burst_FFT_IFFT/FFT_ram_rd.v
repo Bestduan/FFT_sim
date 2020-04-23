@@ -1,19 +1,11 @@
-//******************************************************************
-// Copyright (c) 2015 PANGO MICROSYSTEMS, INC
-// ALL RIGHTS REVERVED.
-//******************************************************************
-
 `timescale 1 ns/1 ps
-
-module pgr_fft_ram_rd #
-(
+module fft_ram_rd #(
     parameter   FFT_MODE            =   "FFT", //"FFT" or "IFFT"
     parameter   FFT_LENGTH          =   1023, //
     parameter   LEN_WIDTH           =   16,//
     parameter   DATA_WIDTH          =   18,//8~
     parameter   ADDR_WIDTH          =   9  //
-)
-(
+) (
     input  wire                     clk,//
     input  wire                     rst_n,
 
@@ -322,4 +314,4 @@ begin
     end
 end
 
-endmodule//pgr_fft_ram_rd
+endmodule//fft_ram_rd

@@ -1,7 +1,0 @@
-0.6
-2018.3
-Dec  7 2018
-00:33:28
-D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/prj/Xilinx/template.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
-D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v,1587029417,verilog,,,,testbench,,,,,,,,
-D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/src/Malloc/RAM/FIFO_RAM.v,1587041208,verilog,,D:/project/FPGA/My_FPGA/TCL_project/Sim/FFT_sim/user/sim/testbench.v,,FIFO_RAM,,,,,,,,

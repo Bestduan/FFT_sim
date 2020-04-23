@@ -1,20 +1,12 @@
-//******************************************************************
-// Copyright (c) 2015 PANGO MICROSYSTEMS, INC
-// ALL RIGHTS REVERVED.
-//******************************************************************
-
 `timescale 1 ns/1 ps
-
-module pgr_fft_ctrl#
-(
+module fft_ctrl #(
     parameter   FFT_LENGTH          =   1023, //
     parameter   LEN_WIDTH           =   16, //
     parameter   LEVEL_VALUE         =   16, //
     parameter   FFT_MODE            =   "FFT", //"FFT" or "IFFT"
     parameter   DATA_WIDTH          =   18,//8~
     parameter   ADDR_WIDTH          =   9  //
-)
-(
+) (
     input  wire                     clk,//
     input  wire                     rst_n,
 
@@ -49,26 +41,20 @@ wire            fft_in_last;
 
 assign fft_in_last = s_axi_last & s_axi_ready & s_axi_valid;
 
-always@(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-    begin
+always@(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         fft_idone <= 1'b0;
     end
-    else
-    begin
+    else begin
         fft_idone <= fft_in_last;
     end
 end
 
-always@(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-    begin
+always@(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         curr_state <= ST_IDLE;
     end
-    else
-    begin
+    else begin
         curr_state <= next_state;
     end
 end
@@ -104,73 +90,55 @@ case(curr_state)
     default     :   next_state = ST_IDLE;
 endcase
 
-always@(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-    begin
+always@(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         cfg_ready <= 1'b0;
     end
-    else if( curr_state == ST_CFG )
-    begin
+    else if( curr_state == ST_CFG ) begin
         cfg_ready <= 1'b1;
     end
-    else
-    begin
+    else begin
         cfg_ready <= 1'b0;
     end
 end
 
-always@(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-    begin
+always@(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         s_axi_ready <= 1'b0;
     end
-    else if( (curr_state == ST_IDLE) | (~s_axi_last & (curr_state == ST_FFT_I) ) )
-    begin
+    else if((curr_state == ST_IDLE) | (~s_axi_last & (curr_state == ST_FFT_I))) begin
         s_axi_ready <= 1'b1;
     end
-    else
-    begin
+    else begin
         s_axi_ready <= 1'b0;
     end
 end
 
-always@(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-    begin
+always@(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         dft_length <= FFT_LENGTH;
         dft_mode   <= FFT_MODE;
     end
-    else if(cfg_valid & cfg_ready)
-    begin
+    else if(cfg_valid & cfg_ready) begin
         dft_length <= cfg_data[15:0];
         dft_mode   <= cfg_data[16];
     end
 end
 
-always@(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-    begin
+always@(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         cfg_valid_r1 <= 1'b0;
     end
-    else if(cfg_valid & cfg_ready)
-    begin
+    else if(cfg_valid & cfg_ready) begin
         cfg_valid_r1 <= 1'b1;
     end
-    else
-    begin
+    else begin
         cfg_valid_r1 <= 1'b0;
     end
 end
 
-always@(posedge clk or negedge rst_n)
-begin
-    if (!rst_n)
-    begin
-//        fft_lev_limit <= {4{1'b0}};
+always@(posedge clk or negedge rst_n) begin
+    if (!rst_n) begin
         fft_lev_limit <= LEVEL_VALUE;
     end
     else if(cfg_valid_r1)
@@ -194,4 +162,4 @@ begin
     endcase
 end
 
-endmodule//pgr_fft_ctrl
+endmodule//fft_ctrl

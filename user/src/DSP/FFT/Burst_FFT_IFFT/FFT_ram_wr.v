@@ -1,17 +1,9 @@
-//******************************************************************
-// Copyright (c) 2015 PANGO MICROSYSTEMS, INC
-// ALL RIGHTS REVERVED.
-//******************************************************************
-
 `timescale 1 ns/1 ps
-
-module pgr_fft_ram_wr #
-(
+module fft_ram_wr #(
     parameter   LEN_WIDTH           =   16,//
     parameter   ADDR_WIDTH          =   16,//
     parameter   DATA_WIDTH          =   18 //8~
-)
-(
+) (
     input  wire                     clk,//
     input  wire                     rst_n,
 
@@ -78,35 +70,6 @@ begin
         mem_select <= 1'b1;
     end
 end
-
-//always@(posedge clk or negedge rst_n)
-//begin
-//    if (!rst_n)
-//    begin
-//        a_wr_addr <= {(LEN_WIDTH-1){1'b0}};
-//    end
-//    else if(fft_in_state)
-//        case(fft_lev_limit)
-//            4'h4    :   a_wr_addr <= { {(LEN_WIDTH-4 ){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2] };
-//            4'h5    :   a_wr_addr <= { {(LEN_WIDTH-5 ){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3] };
-//            4'h6    :   a_wr_addr <= { {(LEN_WIDTH-6 ){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4] };
-//            4'h7    :   a_wr_addr <= { {(LEN_WIDTH-7 ){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5] };
-//            4'h8    :   a_wr_addr <= { {(LEN_WIDTH-8 ){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5], wr_dat_cnt[6] };
-//            4'h9    :   a_wr_addr <= { {(LEN_WIDTH-9 ){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5], wr_dat_cnt[6], wr_dat_cnt[7] };
-//            4'hA    :   a_wr_addr <= { {(LEN_WIDTH-10){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5], wr_dat_cnt[6], wr_dat_cnt[7], wr_dat_cnt[8] };
-//            4'hB    :   a_wr_addr <= { {(LEN_WIDTH-11){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5], wr_dat_cnt[6], wr_dat_cnt[7], wr_dat_cnt[8], wr_dat_cnt[9] };
-//            4'hC    :   a_wr_addr <= { {(LEN_WIDTH-12){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5], wr_dat_cnt[6], wr_dat_cnt[7], wr_dat_cnt[8], wr_dat_cnt[9], wr_dat_cnt[10] };
-//            4'hD    :   a_wr_addr <= { {(LEN_WIDTH-13){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5], wr_dat_cnt[6], wr_dat_cnt[7], wr_dat_cnt[8], wr_dat_cnt[9], wr_dat_cnt[10], wr_dat_cnt[11] };
-//            4'hE    :   a_wr_addr <= { {(LEN_WIDTH-14){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5], wr_dat_cnt[6], wr_dat_cnt[7], wr_dat_cnt[8], wr_dat_cnt[9], wr_dat_cnt[10], wr_dat_cnt[11], wr_dat_cnt[12] };
-//            4'hF    :   a_wr_addr <= { {(LEN_WIDTH-15){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1], wr_dat_cnt[2], wr_dat_cnt[3], wr_dat_cnt[4], wr_dat_cnt[5], wr_dat_cnt[6], wr_dat_cnt[7], wr_dat_cnt[8], wr_dat_cnt[9], wr_dat_cnt[10], wr_dat_cnt[11], wr_dat_cnt[12], wr_dat_cnt[13] };
-//            default :   a_wr_addr <= { {(LEN_WIDTH-3 ){1'b0}}, wr_dat_cnt[0], wr_dat_cnt[1] };
-//        endcase
-//    else
-//    begin
-////        a_wr_addr <= wr_dat_cnt[LEN_WIDTH-2:0];
-//        a_wr_addr <= { {(LEN_WIDTH-1-ADDR_WIDTH){1'b0}}, o_wr_index};
-//    end
-//end
 
 always@(posedge clk or negedge rst_n)
 begin
@@ -201,4 +164,4 @@ begin
     end
 end
 
-endmodule//pgr_fft_ram_wr
+endmodule//fft_ram_wr
