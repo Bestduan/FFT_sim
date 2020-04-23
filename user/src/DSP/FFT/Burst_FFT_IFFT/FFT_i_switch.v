@@ -5,7 +5,7 @@
 
 `timescale 1 ns/1 ps
 
-module pgr_fft_switch #
+module fft_i_switch #
 (
     parameter   TWIDDLE_WIDTH       =   18,     //8~
     parameter   ADDR_WIDTH          =   18, //8~

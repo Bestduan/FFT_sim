@@ -222,11 +222,11 @@ pgr_fft_ram_rd #(
 	.phase_addr    ( phase_addr    )
 );
 
-pgr_fft_switch #(
+fft_i_switch #(
 	.DATA_WIDTH    (2*DATA_WIDTH    ),
 	.ADDR_WIDTH    ( ADDR_WIDTH     ),
 	.TWIDDLE_WIDTH (2*TWIDDLE_WIDTH )
-) pgr_fft_i_switch (
+) fft_i_switch_u (
 	.clk           ( clk           ),
 	.rst_n         ( rst_n         ),
 	.first_level   ( first_level   ),
@@ -284,10 +284,10 @@ assign bf_o_valid = dat_out_vld;
 assign bf_a_data = {dat_aout_im, dat_aout_re};
 assign bf_b_data = {dat_bout_im, dat_bout_re};
 
-pgr_fft_o_switch #(
+fft_o_switch #(
 	.DATA_WIDTH    (2*DATA_WIDTH ),
 	.ADDR_WIDTH    ( ADDR_WIDTH  )
-) pgr_fft_o_switch (
+) fft_o_switch_u (
 	.clk           ( clk           ),
 	.rst_n         ( rst_n         ),
 	.first_level   ( first_lev_b   ),

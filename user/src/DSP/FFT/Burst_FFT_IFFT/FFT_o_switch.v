@@ -5,7 +5,7 @@
 
 `timescale 1 ns/1 ps
 
-module pgr_fft_o_switch #
+module fft_o_switch #
 (
     parameter   ADDR_WIDTH          =   18, //8~
     parameter   DATA_WIDTH          =   18 //8~
